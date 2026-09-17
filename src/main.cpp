@@ -1,8 +1,26 @@
 #include <iostream>
+#include <raylib.h>
 
 int main() {
 
-    std::cout << "Esta parte 2!";
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+    InitWindow(800, 450, "window name");
+
+    while (!WindowShouldClose()) {
+
+        BeginDrawing();
+        ClearBackground(RAYWHITE); 
+
+        DrawRectangle(50, 50, 100, 100, {255, 0, 0, 127});
+        DrawRectangle(75, 75, 100, 100, {0, 255, 0, 127});
+        DrawText("Congrats! You created your first window!", 190, 200, 20, RED);
+
+        EndDrawing();
+
+        CloseWindow();
+    }
+
+    // CloseWindow();
 
     return 0;
 }
